@@ -1,5 +1,11 @@
-import ExampleModel from '@/app/model/example';
+import * as express from 'express';
 
-const example = new ExampleModel();
+const app = express();
 
-console.log(example.showName('world'));
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
